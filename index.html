@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today Coins Store</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #1d0036, #cc005b, #d6a571);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            padding: 20px;
+            border-radius: 15px;
+            width: 250px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+        .coin-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #f4c27c;
+            transition: text-shadow 0.3s;
+        }
+        .coin-title:hover {
+            text-shadow: 0 0 15px #f4c27c, 0 0 30px #ffdd77, 0 0 45px #ffcc44;
+        }
+        .price {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .buy-btn {
+            background: linear-gradient(45deg, #ff007f, #ff4d00);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1em;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.3s;
+        }
+        .buy-btn:hover {
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.8);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Today Coins Store</h1>
+    <div class="container">
+        <script>
+            const coins = [
+                { name: "1M Coins", price: 10 },
+                { name: "2M Coins", price: 20 },
+                { name: "5M Coins", price: 50 },
+                { name: "10M Coins", price: 100 },
+                { name: "15M Coins", price: 150 },
+                { name: "20M Coins", price: 200 },
+                { name: "30M Coins", price: 300 },
+                { name: "40M Coins", price: 400 },
+                { name: "50M Coins", price: 500 }
+            ];
+            
+            coins.forEach(coin => {
+                document.write(`
+                    <div class="card">
+                        <div class="coin-title">${coin.name}</div>
+                        <div class="price">Rs ${coin.price}</div>
+                        <a href="payment.html?price=${coin.price}" class="buy-btn">Buy</a>
+                    </div>
+                `);
+            });
+        </script>
+    </div>
+
+</body>
+</html>
